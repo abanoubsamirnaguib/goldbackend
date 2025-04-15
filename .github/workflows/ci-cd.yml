@@ -55,10 +55,6 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader --no-dev
 
-      - name: Build production assets
-        run: |
-          npm ci
-          npm run build
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
