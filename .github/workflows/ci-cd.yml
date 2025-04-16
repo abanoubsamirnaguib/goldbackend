@@ -62,7 +62,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_DIRECTORY }}/
+          server-dir: public_html/backend/
+          # server-dir: ${{ secrets.FTP_DIRECTORY }}/
           local-dir: ./
           exclude: |
             **/storage/**
