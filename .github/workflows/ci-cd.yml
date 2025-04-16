@@ -63,6 +63,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/backend/
+          port: 65002
+          protocol: ftp
           # server-dir: ${{ secrets.FTP_DIRECTORY }}/
           local-dir: ./
           exclude: |
