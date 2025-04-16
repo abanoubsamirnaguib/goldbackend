@@ -65,6 +65,8 @@ jobs:
           server-dir: ${{ secrets.FTP_DIRECTORY }}/
           local-dir: ./
           exclude: |
+            **/storage/**
+            **/vendor/**
             **/.git*
             **/.git*/**
             **/node_modules/**
