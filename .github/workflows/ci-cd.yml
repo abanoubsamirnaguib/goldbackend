@@ -81,7 +81,7 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.SSH_PORT || 22 }}
+          port: ${{ secrets.SSH_PORT || 21 }}
           script: |
             cd ${{ secrets.FTP_DIRECTORY }}
             composer install --no-interaction --optimize-autoloader --no-dev
@@ -95,7 +95,7 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.SSH_PORT || 22 }}
+          port: ${{ secrets.SSH_PORT || 21 }}
           script: |
             cd ${{ secrets.FTP_DIRECTORY }}
             cat > .env << 'EOL'
