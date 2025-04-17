@@ -62,10 +62,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/backend/
+          # server-dir: public_html/backend/
           port: 21
           protocol: ftp
-          # server-dir: ${{ secrets.FTP_DIRECTORY }}/
+          server-dir: ${{ secrets.FTP_DIRECTORY }}/
           local-dir: ./
           exclude: |
             **/storage/**
