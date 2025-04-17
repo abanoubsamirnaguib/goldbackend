@@ -66,7 +66,6 @@ jobs:
           server-dir: ${{ secrets.FTP_DIRECTORY }}/
           local-dir: ./
           exclude: |
-            **/storage/**
             **/vendor/**
             **/.git*
             **/.git*/**
@@ -75,22 +74,3 @@ jobs:
             .env.example
             phpunit.xml
 
-
-      - name: Update .env file on remote server
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.SSH_PORT || 21 }}
-          script: |
-            cd ${{ secrets.FTP_DIRECTORY }}
-            cat > .env <<EOL
-            APP_ENV=production
-            APP_DEBUG=false
-            DB_HOST=localhost
-            DB_DATABASE=production_db
-            DB_USERNAME=root
-            DB_PASSWORD=
-            EOL
-            php artisan config:clear
